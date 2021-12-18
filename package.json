@@ -1,0 +1,19 @@
+{
+  "name": "auth-microservice-redis-nodejs-platzi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "api": "node api",
+    "api-dev": "nodemon api",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  }
+}
