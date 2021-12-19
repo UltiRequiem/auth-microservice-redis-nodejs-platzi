@@ -1,5 +1,5 @@
-import { env } from "node:process";
+import { env } from 'node:process';
 
-export const PORT = env.PORT || 3000;
+export const API_PORT = env.API_PORT || 3001;
 
-export const {} = env;
+export const { DB_USERNAME, DB_NAME } = env;

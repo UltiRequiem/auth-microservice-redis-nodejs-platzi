@@ -1,23 +1,23 @@
-export function success(res, body = "", status = 200) {
-  res.status(status).send({
+export function success(response, body = '', status = 200) {
+  response.status(status).send({
     error: false,
     status,
     body,
   });
 }
 
-export function error(res, body = "Internal Server Error", status = 500) {
-  res.status(status).send({
+export function error(response, body = 'Internal Server Error', status = 500) {
+  response.status(status).send({
     error: true,
     status,
     body,
   });
 }
 
-export default function response(res, body, status) {
+export default async function send(response, body, status) {
   try {
-    success(res, body, status);
+    success(response, await body(), status);
   } catch {
-    error(res, body, status);
+    error(response, await body(), status);
   }
 }
