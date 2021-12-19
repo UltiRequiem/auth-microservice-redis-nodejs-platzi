@@ -11,6 +11,7 @@ class DummyDB {
 
   async set(key, value) {
     this.data[key] = value;
+    return this.data[key];
   }
 }
 

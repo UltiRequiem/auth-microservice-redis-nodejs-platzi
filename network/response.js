@@ -13,3 +13,11 @@ export function error(res, body = "Internal Server Error", status = 500) {
     body,
   });
 }
+
+export default function response(res, body, status) {
+  try {
+    success(res, body, status);
+  } catch {
+    error(res, body, status);
+  }
+}
