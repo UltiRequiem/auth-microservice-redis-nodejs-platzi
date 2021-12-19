@@ -6,11 +6,11 @@ import { list, create } from './controller.js';
 const router = Router();
 
 router.get('/', async (_request, response) => {
-  await send(response, () => list());
+  await send(response, async () => list());
 });
 
 router.post('/', async ({ body }, response) => {
-  await send(response, () => create(body));
+  await send(response, async () => create(body));
 });
 
 export default router;
