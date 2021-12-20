@@ -1,9 +1,9 @@
 import { DummyDB as DB } from '../../../store/index.js';
 
-export async function list() {
-  return DB.get('numbers');
-}
+const TABLE = 'user';
 
-export async function create(data) {
-  return DB.set('numbers', data);
-}
+export const list = async () => DB.list(TABLE);
+
+export const get = async (id) => DB.get(TABLE, id);
+
+export const create = async (data) => DB.set(TABLE, data);
