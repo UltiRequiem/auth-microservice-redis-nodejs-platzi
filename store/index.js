@@ -1,3 +1,2 @@
-import DummyDB from './dummy.js';
-
-export const CustomDummyDB = new DummyDB();
+// eslint-disable-next-line import/prefer-default-export
+export { default as DummyDB } from './dummy.js';

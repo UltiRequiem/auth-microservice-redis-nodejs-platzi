@@ -1,7 +1,7 @@
-export default class DummyDB {
+export class DummyDB {
   constructor(extraData = {}) {
     this.data = {
-      numbers: Array.from({ length: 10 }).map((_value, index) => ++index),
+      numbers: Array.from({ length: 10 }).map((_value, index) => index + 1),
       ...extraData,
     };
   }
@@ -15,3 +15,5 @@ export default class DummyDB {
     return this.data[key];
   }
 }
+
+export default new DummyDB();

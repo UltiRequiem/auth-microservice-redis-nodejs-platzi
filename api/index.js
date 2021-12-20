@@ -11,5 +11,6 @@ app.use(express.json());
 app.use('/api/user', userRoute);
 
 app.listen(API_PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Server listening http://localhost:${API_PORT}`);
 });

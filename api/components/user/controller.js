@@ -1,4 +1,4 @@
-import { CustomDummyDB as DB } from '../../../store/index.js';
+import { DummyDB as DB } from '../../../store/index.js';
 
 export async function list() {
   return DB.get('numbers');
