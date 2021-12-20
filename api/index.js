@@ -1,4 +1,5 @@
 import express from 'express';
+import timeStampHandler from 'express-response-timestamp';
 
 import { userRoute } from './components/index.js';
 import { API_PORT } from '../config.js';
@@ -7,6 +8,8 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(timeStampHandler());
 
 app.use('/api/user', userRoute);
 
