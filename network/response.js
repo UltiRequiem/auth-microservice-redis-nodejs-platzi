@@ -18,6 +18,6 @@ export default async function send(response, body, status) {
   try {
     success(response, await body(), status);
   } catch {
-    error(response, await body(), status);
+    error(response);
   }
 }
