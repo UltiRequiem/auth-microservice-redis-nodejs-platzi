@@ -1,9 +1,46 @@
+import { nanoid } from 'nanoid';
+import auth from '../auth/index.js';
+
 import { DummyDB as DB } from '../../../store/index.js';
 
-const TABLE = 'user';
+/** @template T */
+class UserController {
+  constructor(store = DB) {
+    this.table = 'user';
+    this.store = store;
+  }
 
-export const list = async () => DB.list(TABLE);
+  async upsert({
+    id, username, password, name,
+  }) {
+    if (password || username) {
+      await auth.upsert({ id, username, password });
+    }
 
-export const get = async (id) => DB.get(TABLE, id);
+    this.store.upsert(this.table, {
+      i: id || nanoid(),
+      username,
+      password,
+      name,
+    });
+  }
 
-export const create = async (data) => DB.set(TABLE, data);
+  async list() {
+    return this.store.list(this.table);
+  }
+
+  /**
+   * @param {string} id
+   * @returns {Promise<T>}
+   * @memberof UserController
+   */
+  async get(id) {
+    return this.store.get(this.table, id);
+  }
+
+  async create(data) {
+    return this.store.set(this.table, data);
+  }
+}
+
+export default new UserController();

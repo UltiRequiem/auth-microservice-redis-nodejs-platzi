@@ -8,11 +8,13 @@
     "api": "node api NODE_ENV=production",
     "api-dev": "nodemon api",
     "format": "prettier --write .",
-    "lint": "eslint . && prettier --check ."
+    "lint": "eslint ."
   },
   "dependencies": {
     "express": "^4.17.2",
-    "express-response-timestamp": "^1.0.0"
+    "express-response-timestamp": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "nanoid": "^3.1.30"
   },
   "devDependencies": {
     "eslint": "^8.5.0",
