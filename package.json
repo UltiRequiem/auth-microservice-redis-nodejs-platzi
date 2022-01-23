@@ -14,7 +14,7 @@
     "express": "^4.17.2",
     "express-response-timestamp": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
-    "nanoid": "^3.1.30"
+    "nanoid": "^3.1.31"
   },
   "devDependencies": {
     "eslint": "^8.5.0",
