@@ -13,7 +13,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "express-response-timestamp": "^1.0.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "nanoid": "^3.1.31"
   },
   "devDependencies": {
